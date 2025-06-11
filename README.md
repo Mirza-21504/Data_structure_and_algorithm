@@ -1,16 +1,16 @@
-# 📝 Placement Training Daily Log (Python Focus)
+# Placement Training Daily Log (Python Focus)
 
-This repository is a daily tracker of my placement preparation journey. I am documenting everything I learn and practice each day — from solving coding questions to theory notes and word documents.  
+This repository is a daily tracker of my placement preparation journey. I am documenting everything I learn and practice each day, from solving coding questions to theory notes and word documents.  
 The focus is primarily on **Python-based problem-solving**, covering DSA, algorithms, and system design topics.
 
 ---
 
-## 📁 Folder Structure
+## Folder Structure
 
 
 ---
 
-## 🔁 Daily Workflow
+## Daily Workflow
 
 Every day, I:
 1. Practice coding questions (Python)
@@ -20,7 +20,7 @@ Every day, I:
 
 ---
 
-## 🚀 Topics Being Covered
+## Topics Being Covered
 
 - ✅ Fundamentals
 - ✅ Loop and Conditions
