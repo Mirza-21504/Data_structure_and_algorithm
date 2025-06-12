@@ -1,0 +1,59 @@
+# Day 02 Log
+
+## Topics Covered:
+- Basic Python problems using conditions and loops
+- Number and string manipulations
+
+## Problems Practiced:
+1. Check if a number is prime
+2. Calculate factorial of a number
+3. Find the sum of first n natural numbers
+4. Find all vowels in a given string
+5. Find the middle digit in a number
+
+## Notes:
+- Understood difference between range(n) and range(1, n+1)
+- Practiced string slicing and ASCII character checks
+- Applied loop logic for digit-based string operations
+
+
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def factorial(n):
+    result = 1
+    for i in range(2, n + 1):
+        result *= i
+    return result
+
+def sum_natural(n):
+    return n * (n + 1) // 2
+
+def find_vowels(s):
+    return [ch for ch in s if ch.lower() in 'aeiou']
+
+def find_middle_digit(s):
+    s = str(s)
+    n = len(s)
+    if n % 2 == 1:
+        return s[n // 2]
+    else:
+        return s[n // 2 - 1 : n // 2 + 1]
+
+num = int(input())
+print("Prime:" if is_prime(num) else "Not Prime")
+
+print("Factorial:", factorial(num))
+
+print("Sum of naturals:", sum_natural(num))
+
+text = input()
+print("Vowels:", find_vowels(text))
+
+number = input()
+print("Middle digit(s):", find_middle_digit(number))
