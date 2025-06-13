@@ -1,0 +1,148 @@
+# Basic Python Practice Programs
+
+# 1. Input and Math Operation
+a, b, c, d = map(int, input("Enter 4 numbers: ").split())
+s = a + b
+x = c - d
+print("Sum:", s)
+print("Difference:", x)
+
+
+# 2. Remove Names Starting with a Character
+n = int(input("How many students? "))
+names = []
+
+for i in range(n):
+    name = input(f"Enter name of student {i + 1}: ")
+    names.append(name)
+
+char = input("Enter starting character to remove: ")
+for name in names[:]:
+    if name.startswith(char):
+        names.remove(name)
+
+print("Names after removal:", " ".join(names))
+
+
+# 3. Right-Angled Triangle Pattern
+n = 5
+for i in range(1, n + 1):
+    print("*" * i)
+
+
+# 4. Pyramid Star Pattern
+n = 5
+for i in range(1, n + 1):
+    print(" " * (n - i) + "*" * (2 * i - 1))
+
+
+# 5. Mini Banking System
+import os
+import ast
+
+file = 'accounts.txt'
+if os.path.exists(file):
+    d = open(file).read().strip()
+    acc = ast.literal_eval(d) if d else {}
+else:
+    acc = {}
+
+def save():
+    open(file, 'w').write(str(acc))
+
+def create():
+    n = input("Enter account number: ")
+    if n in acc:
+        print('Account exists')
+        return
+    h = input("Enter holder name: ")
+    acc[n] = [h, 0.0]
+    save()
+    print(f'Account created for {h} with account no {n}.')
+
+def deposit():
+    n = input("Enter account number: ")
+    if n not in acc:
+        print('Account not found')
+        return
+    a = float(input("Enter amount to deposit: "))
+    if a <= 0:
+        print('Invalid amount')
+        return
+    acc[n][1] += a
+    save()
+    print('Deposit successful.')
+
+def withdraw():
+    n = input("Enter account number: ")
+    if n not in acc:
+        print('Account not found')
+        return
+    a = float(input("Enter amount to withdraw: "))
+    if a <= 0 or a > acc[n][1]:
+        print('Invalid amount')
+        return
+    acc[n][1] -= a
+    save()
+    print('Withdraw successful.')
+
+def balance():
+    n = input("Enter account number: ")
+    if n not in acc:
+        print('Account not found')
+        return
+    print(f'Current Balance: ₹{acc[n][1]:.2f}')
+
+def transfer():
+    f = input("Enter FROM account number: ")
+    t = input("Enter TO account number: ")
+    if f not in acc or t not in acc or f == t:
+        print('Invalid account')
+        return
+    a = float(input("Enter amount to transfer: "))
+    if a <= 0 or a > acc[f][1]:
+        print('Invalid amount')
+        return
+    acc[f][1] -= a
+    acc[t][1] += a
+    save()
+    print('Transfer successful.')
+
+def delete():
+    n = input("Enter account number: ")
+    if n not in acc:
+        print('Account not found')
+        return
+    if acc[n][1] != 0:
+        print('Non-zero balance')
+        return
+    acc.pop(n)
+    save()
+    print('Account deleted.')
+
+while True:
+    print('\n--- Mini Banking System ---')
+    print('1. Create Account')
+    print('2. Deposit')
+    print('3. Withdraw')
+    print('4. Check Balance')
+    print('5. Transfer')
+    print('6. Delete Account')
+    print('7. Exit')
+    c = input('Enter your choice (1-7): ')
+    match c:
+        case '1': create()
+        case '2': deposit()
+        case '3': withdraw()
+        case '4': balance()
+        case '5': transfer()
+        case '6': delete()
+        case '7': break
+        case _: print('Invalid choice')
+
+
+# 6. Reverse Decimal Part of a Number
+bal = 100.23654
+im, dot = str(bal).split(".")
+p = dot[::-1]
+print(im + "." + p)
