@@ -1,0 +1,76 @@
+# Daiy 4  
+
+# 1. Split a word so every character is separated by a comma
+
+def split_with_commas(word):
+    """
+    Example: "Veltech" ➜ "V,e,l,t,e,c,h"
+
+    How it works:
+    1. join() glues items in a sequence together.
+    2. ",".join(word) looks at every character in `word`
+       and puts a comma between each one.
+    """
+    return ",".join(word)
+
+
+# ──────────────────────────────────────────────────────────────────
+# 2. Check if one number is a multiple of another
+
+def is_multiple(n, x):
+    """
+    Returns True when `n` divides perfectly by `x`.
+
+    ‣ The % operator gives the remainder after division.
+    ‣ If the remainder is 0, the division is exact.
+    ‣ Division by zero is impossible, so we return False if x == 0.
+    """
+    return x != 0 and n % x == 0
+
+
+# ──────────────────────────────────────────────────────────────────
+# 3. Product of the first n natural numbers (1 × 2 × … × n)
+
+def product_first_n(n):
+    """
+    Also called n! (factorial).
+
+    We start with prod = 1, then multiply by every number
+    from 1 up to and including n.
+    For n ≤ 0 we return 1 — the conventional value for 0!.
+    """
+    prod = 1
+    for i in range(1, n + 1):
+        prod *= i
+    return prod
+
+
+# ──────────────────────────────────────────────────────────────────
+# 4. Print numbers from 1..m that are divisible by 2 OR 3 OR 5
+
+def print_divisible_numbers(m):
+    """
+    Loops through each number up to m.
+    Prints the number if any of these is true:
+      • divisible by 2 (even)
+      • divisible by 3
+      • divisible by 5
+    """
+    for i in range(1, m + 1):
+        if i % 2 == 0 or i % 3 == 0 or i % 5 == 0:
+            print(i)
+
+
+# ──────────────────────────────────────────────────────────────────
+# 5. Sum of ASCII values in a word
+
+def ascii_sum(word):
+    """
+    Adds up the numeric code (ord) for every character.
+    Example: "aa" ➜ 97 + 97 = 194.
+    """
+    total = 0
+    for char in word:
+        total += ord(char)
+    return total
+
