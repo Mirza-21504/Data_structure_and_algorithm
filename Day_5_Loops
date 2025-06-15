@@ -1,0 +1,45 @@
+# for loop with range
+for i in range(5):
+    print("For loop:", i)
+
+# for loop over list
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print("Fruit:", fruit)
+
+# while loop with counter
+count = 0
+while count < 5:
+    print("While loop:", count)
+    count += 1
+
+# break in loop
+for i in range(10):
+    if i == 5:
+        break
+    print("Break example:", i)
+
+# continue in loop
+for i in range(5):
+    if i == 2:
+        continue
+    print("Continue example:", i)
+
+# nested loop
+for i in range(3):
+    for j in range(2):
+        print("Nested loop:", i, j)
+
+# loop with else (for)
+for i in range(3):
+    print("Else with for:", i)
+else:
+    print("For loop finished")
+
+# loop with else (while)
+i = 0
+while i < 3:
+    print("Else with while:", i)
+    i += 1
+else:
+    print("While loop finished")
